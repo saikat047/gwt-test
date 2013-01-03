@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='org.test.GwtMain' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/GwtMain/greet" class="org.test.server.GreetingServiceImpl" />
+
+</module>
