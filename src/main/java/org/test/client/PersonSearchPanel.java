@@ -7,7 +7,9 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.HTMLTable;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -17,6 +19,9 @@ public class PersonSearchPanel {
 
     @UiField
     TextBox searchBox;
+    @UiField
+    Grid searchResult;
+
 
     interface PersonSearchPanelUiBinder extends UiBinder<HTMLPanel, PersonSearchPanel> {
 

@@ -3,5 +3,7 @@
     <g:HTMLPanel>
       <g:Label text="Search Person:"/>
       <g:TextBox ui:field="searchBox"/>
+      <g:Label text="Search Result:"/>
+      <g:Grid ui:field="searchResult"/>
     </g:HTMLPanel>
 </ui:UiBinder>
