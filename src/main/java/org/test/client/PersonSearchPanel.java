@@ -15,6 +15,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -25,7 +26,9 @@ public class PersonSearchPanel {
     @UiField
     TextBox searchBox;
     @UiField
-    Grid searchResult;
+    HTMLPanel resultPanel;
+
+    private Grid searchResult;
 
 
     interface PersonSearchPanelUiBinder extends UiBinder<HTMLPanel, PersonSearchPanel> {
@@ -48,16 +51,19 @@ public class PersonSearchPanel {
 
                     public void onSuccess(List<Person> result) {
                         populatePersonResult(result);
+                        resultPanel.setVisible(true);
                     }
                 });
             }
         }));
-
+        resultPanel.setVisible(false);
+        resultPanel.add(new Label("Search Result:"));
+        searchResult = new Grid(0, 2);
+        resultPanel.add(searchResult);
     }
 
     private void populatePersonResult(List<Person> persons) {
         searchResult.resizeRows(persons.size());
-        searchResult.resizeColumns(2);
         for (int i = 0; i < persons.size(); i++) {
             Person person = persons.get(i);
             searchResult.setHTML(i, 0, person.getFirstName());

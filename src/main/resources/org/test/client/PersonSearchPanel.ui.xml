@@ -1,9 +1,8 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-    <g:HTMLPanel>
-      <g:Label text="Search Person:"/>
+    <g:HTMLPanel styleName="personSearch">
+      <g:Label text="Search Person:" styleName="label-inline"/>
       <g:TextBox ui:field="searchBox"/>
-      <g:Label text="Search Result:"/>
-      <g:Grid ui:field="searchResult"/>
+      <g:HTMLPanel ui:field="resultPanel"/>
     </g:HTMLPanel>
 </ui:UiBinder>

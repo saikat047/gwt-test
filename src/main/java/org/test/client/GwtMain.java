@@ -40,6 +40,6 @@ public class GwtMain implements EntryPoint {
    * This is the entry point method.
    */
   public void onModuleLoad() {
-      RootPanel.get().add(new PersonSearchPanel().getElement());
+      RootPanel.get("mainContainer").add(new PersonSearchPanel().getElement());
   }
 }
